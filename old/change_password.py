@@ -20,7 +20,7 @@ class BOT():
                 pass
             last_line = line.rstrip("\n")
 
-        self.username = "bugggatest"
+        self.username = "buggabugga1337"
         self.password = last_line
 
     def element_present(self, text):
