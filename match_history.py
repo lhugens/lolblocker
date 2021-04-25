@@ -5,7 +5,18 @@ from functools import partial
 from bs4 import BeautifulSoup as bs
 
 SUMMONER_NAME = 'buggga'
-REGION = 'euw'
+REGION        = 'euw'
+FILE_NAME     = 'match_history.txt'
+
+class StringConverter(dict):
+    def __contains__(self, item):
+        return True
+
+    def __getitem__(self, item):
+        return str
+
+    def get(self, default=None):
+        return str
 
 def get_last_games():
 
@@ -32,15 +43,29 @@ def get_last_games():
 
         games.append([game_id, time_stamp, game_type, game_result, game_length, champion, level, kda])
 
-    return pd.DataFrame(games.reverse, columns = ['ID', 'Time Stamp', 'Type', 'Result', 'Length', 'Champion', 'Level', 'KDA'])
+    games.reverse()
+    return pd.DataFrame(games, columns = ['ID', 'Time Stamp', 'Type', 'Result', 'Length', 'Champion', 'Level', 'KDA'])
 
-df = get_last_games()
+def update_match_history():
+    FILE_EXISTS = path.exists(FILE_NAME)
 
-FILE_NAME = 'match_history.txt'
-FILE_EXISTS = path.exists(FILE_NAME)
+    last_games_df = get_last_games()
 
-if FILE_EXISTS:
-    df.to_csv(FILE_NAME, index=False, mode='a', header=False)
-else:
-    df.to_csv(FILE_NAME)
+    if not FILE_EXISTS:
+        last_games_df.to_csv(FILE_NAME, index=False)
+    else:
+        saved_games_df = pd.read_csv(FILE_NAME, converters=StringConverter())
+        last_saved_id = saved_games_df['ID'].iloc[-1]
 
+        if last_saved_id in last_games_df['ID'].values:
+            i = last_games_df.index[last_games_df['ID'] == last_saved_id].tolist()[0]
+            last_games_df = last_games_df.iloc[i+1:]
+
+        if saved_games_df['ID'].size > 60:
+            saved_games_df = saved_games_df.iloc[20:]
+            saved_games_df.to_csv(FILE_NAME, index=False)
+
+        last_games_df.to_csv(FILE_NAME, index=False, mode='a', header=False)
+
+if __name__ == '__main__':
+    update_match_history()
