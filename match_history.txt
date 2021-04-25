@@ -1,11 +1,12 @@
-ID,Time Stamp,Type,Result,Length,Champion,Level,KDA
-5215314154,2021-04-17 07:05:33,ARAM,Defeat,17m 32s,Cho'Gath,15,4/9/15
-5215387590,2021-04-17 07:46:18,Normal,Defeat,33m 47s,Pyke,13,1/11/5
-5216477343,2021-04-17 23:41:02,Ranked Solo,Victory,35m 45s,Pyke,15,12/7/13
-5216691907,2021-04-18 01:20:08,Ranked Solo,Defeat,45m 59s,Pyke,17,15/12/16
-5217030696,2021-04-18 03:55:17,Normal,Victory,23m 40s,Pyke,10,7/3/6
-5217058055,2021-04-18 04:38:22,Normal,Defeat,24m 58s,Pyke,11,8/8/14
-5217126965,2021-04-18 05:29:15,Ranked Solo,Victory,30m 32s,Leona,15,7/4/21
-5217330742,2021-04-18 06:36:50,Ranked Solo,Defeat,31m 14s,Pyke,12,7/9/8
-5217350303,2021-04-18 07:18:30,Normal,Victory,24m 21s,Alistar,9,1/7/10
-5217406444,2021-04-18 07:56:56,Normal,Defeat,32m 0s,Alistar,12,0/9/5
+ID,Time Stamp,Checked,Allowed,Sentenced,Type,Result,Length,Champion,Level,KDA
+5215314154,2021-04-17 07:05:33,False,True,False,ARAM,Defeat,17m 32s,Cho'Gath,15,4/9/15
+5215387590,2021-04-17 07:46:18,False,True,False,Normal,Defeat,33m 47s,Pyke,13,1/11/5
+5216477343,2021-04-17 23:41:02,False,True,False,Ranked Solo,Victory,35m 45s,Pyke,15,12/7/13
+5216691907,2021-04-18 01:20:08,False,True,False,Ranked Solo,Defeat,45m 59s,Pyke,17,15/12/16
+5217030696,2021-04-18 03:55:17,False,True,False,Normal,Victory,23m 40s,Pyke,10,7/3/6
+5217058055,2021-04-18 04:38:22,False,True,False,Normal,Defeat,24m 58s,Pyke,11,8/8/14
+5217126965,2021-04-18 05:29:15,False,True,False,Ranked Solo,Victory,30m 32s,Leona,15,7/4/21
+5217330742,2021-04-18 06:36:50,False,True,False,Ranked Solo,Defeat,31m 14s,Pyke,12,7/9/8
+5217350303,2021-04-18 07:18:30,False,True,False,Normal,Victory,24m 21s,Alistar,9,1/7/10
+5217406444,2021-04-18 07:56:56,False,True,False,Normal,Defeat,32m 0s,Alistar,12,0/9/5
+5231751245,2021-04-26 02:51:49,False,True,False,Normal,Victory,34m 45s,Pyke,15,7/12/14
